@@ -1,0 +1,9 @@
+html {
+	background-color: #4786ff;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
