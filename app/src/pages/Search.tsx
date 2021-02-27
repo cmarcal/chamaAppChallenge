@@ -1,5 +1,6 @@
 import React from "react";
+import { Container } from "../components";
 
 export default function Search() {
-	return <>Search component</>;
+	return <Container>teste</Container>;
 }
