@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
-import Search from "./pages/Search";
-
+import Search from "./pages/search/Search";
 
 const Routes = () => {
 	return (

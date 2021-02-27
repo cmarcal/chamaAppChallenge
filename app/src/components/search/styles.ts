@@ -2,32 +2,59 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 	width: 100%;
-	box-shadow: 0px 5px 20px -12px rgb(0 0 0 / 34%);
-	-webkit-box-shadow: 0px 5px 20px -12px rgb(0 0 0 / 34%);
+	box-shadow: 0px 10px 20px -12px rgb(0 0 0);
 	position: relative;
-	border-radius: 40px;
+	border-radius: 64px;
 	background: #fff;
 	overflow-x: hidden;
 	display: flex;
+
+	@media (max-width: 768px) {
+		border-radius: 40px;
+	}
 `;
 
 export const Icon = styled.div`
-	width: 48px;
-	height: 48px;
+	width: 96px;
+	height: 96px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 3rem;
+
+	@media (max-width: 1024px) {
+		width: 64px;
+		height: 64px;
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 768px) {
+		width: 48px;
+		height: 48px;
+		font-size: 1rem;
+	}
 `;
 
 export const Input = styled.input`
 	padding: 0 20px 0 0;
-	height: 48px;
+	height: 96px;
 	background: #fff;
-	color: #000;
-	font-size: 14px;
+	color: #2c2c2c;
+	font-size: 2rem;
 	border-radius: 2px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border: none;
 	width: 95%;
+	outline: none;
+
+	@media (max-width: 1024px) {
+		height: 64px;
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 768px) {
+		height: 48px;
+		font-size: 1rem;
+	}
 `;
