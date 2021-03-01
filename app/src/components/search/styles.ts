@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 
 	@media (max-width: 768px) {
 		border-radius: 40px;
+		width: 90%;
 	}
 `;
 
