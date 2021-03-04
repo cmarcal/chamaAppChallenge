@@ -32,8 +32,54 @@ export const BackButton = styled.button`
 
 export const PersonalInfo = styled.div`
 	grid-area: personInfo;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 16px;
 	border: 1px solid green;
+	@media (max-width: 768px) {
+		flex-direction: row;
+	}
+
+	@media (max-width: 450px) {
+		flex-direction: column;
+	}
 `;
+
+export const MainProfileInfo = styled.div`
+	@media (max-width: 768px) {
+		width: 40%;
+	}
+	@media (max-width: 450px) {
+		width: 100%;
+		text-align: center;
+	}
+`;
+
+export const ProfileImage = styled.img`
+	max-width: 240px;
+	border-radius: 120px;
+	@media (max-width: 768px) {
+		max-width: 180px;
+		border-radius: 90px;
+	}
+`;
+
+export const Username = styled.h2``;
+export const Login = styled.span``;
+
+export const AdditionalProfileInfo = styled.div`
+	align-self: baseline;
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+	@media (max-width: 450px) {
+		align-self: center;
+	}
+`;
+
+export const UserBio = styled.span``;
+export const UserEmail = styled.span``;
 
 export const ReposInfo = styled.div`
 	grid-area: reposInfo;

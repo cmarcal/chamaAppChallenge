@@ -1,6 +1,19 @@
 import React from "react";
 import { User } from "../../services/types";
-import { Wrapper, PersonalInfo, ReposInfo, Topbar, BackButton } from "./styles";
+import {
+	Wrapper,
+	PersonalInfo,
+	ReposInfo,
+	Topbar,
+	BackButton,
+	ProfileImage,
+	Username,
+	Login,
+	MainProfileInfo,
+	AdditionalProfileInfo,
+	UserBio,
+	UserEmail,
+} from "./styles";
 import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 const UserInfo = () => {
@@ -15,7 +28,17 @@ const UserInfo = () => {
 					<IoArrowBackCircleOutline />
 				</BackButton>
 			</Topbar>
-			<PersonalInfo></PersonalInfo>
+			<PersonalInfo>
+				<MainProfileInfo>
+					<ProfileImage src={user.avatar_url} />
+					<Username>{user.name}</Username>
+					<Login>{user.login}</Login>
+				</MainProfileInfo>
+				<AdditionalProfileInfo>
+					<UserBio>Bio: {user.bio ?? "-"}</UserBio>
+					<UserEmail>Email: {user.email ?? "-"}</UserEmail>
+				</AdditionalProfileInfo>
+			</PersonalInfo>
 			<ReposInfo></ReposInfo>
 		</Wrapper>
 	);
