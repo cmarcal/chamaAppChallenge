@@ -36,12 +36,11 @@ export const PersonalInfo = styled.div`
 	flex-direction: column;
 	align-items: center;
 	padding: 16px;
-	border: 1px solid green;
 	@media (max-width: 768px) {
 		flex-direction: row;
 	}
 
-	@media (max-width: 450px) {
+	@media (max-width: 475px) {
 		flex-direction: column;
 	}
 `;
@@ -50,7 +49,7 @@ export const MainProfileInfo = styled.div`
 	@media (max-width: 768px) {
 		width: 40%;
 	}
-	@media (max-width: 450px) {
+	@media (max-width: 475px) {
 		width: 100%;
 		text-align: center;
 	}
@@ -65,7 +64,9 @@ export const ProfileImage = styled.img`
 	}
 `;
 
-export const Username = styled.h2``;
+export const Username = styled.h2`
+	margin-bottom: 8px;
+`;
 export const Login = styled.span``;
 
 export const AdditionalProfileInfo = styled.div`
@@ -73,13 +74,24 @@ export const AdditionalProfileInfo = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-top: 16px;
-	@media (max-width: 450px) {
+	gap: 8px;
+
+	@media (max-width: 768px) {
+		margin-top: 0;
+		padding: 8px;
+	}
+	@media (max-width: 475px) {
 		align-self: center;
 	}
 `;
 
 export const UserBio = styled.span``;
 export const UserEmail = styled.span``;
+export const UserLocation = styled.span``;
+export const FollowInfo = styled.span``;
+export const GithubLink = styled.a`
+	text-decoration: none;
+`;
 
 export const ReposInfo = styled.div`
 	grid-area: reposInfo;
