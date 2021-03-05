@@ -93,7 +93,13 @@ export const GithubLink = styled.a`
 	text-decoration: none;
 `;
 
+export const LoadingWrapper = styled.div`
+	margin: 0 auto;
+	align-self: center;
+`;
+
 export const ReposInfo = styled.div`
+	display: flex;
 	grid-area: reposInfo;
 	border: 1px solid tomato;
 `;

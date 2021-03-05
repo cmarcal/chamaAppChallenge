@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { InputSearch } from "../../components";
+import { InputSearch, Loading } from "../../components";
 import { useGetUserInfo } from "../../hooks";
 import { ErrorMessage, Wrapper } from "./styles";
 import { useHistory } from "react-router-dom";
@@ -18,6 +18,7 @@ export default function Search() {
 		e.preventDefault();
 		getUser(inputValue);
 	};
+	console.log(isLoading);
 
 	return (
 		<Wrapper onSubmit={handleSubmit}>
@@ -26,6 +27,7 @@ export default function Search() {
 				handleChange={(e) => setInputValue(e.target.value)}
 				placeholderText="Search a github username and hit Enter..."
 			/>
+			{isLoading && <Loading color="#f1f1f1" />}
 			{error && <ErrorMessage>Error: {error}</ErrorMessage>}
 		</Wrapper>
 	);

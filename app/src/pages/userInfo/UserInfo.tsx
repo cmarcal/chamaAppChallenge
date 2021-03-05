@@ -16,10 +16,12 @@ import {
 	UserLocation,
 	FollowInfo,
 	GithubLink,
+	LoadingWrapper,
 } from "./styles";
 import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { GoLinkExternal } from "react-icons/go";
+import { Loading } from "../../components";
 const UserInfo = () => {
 	const { state: user } = useLocation<User>();
 	const history = useHistory();
@@ -56,7 +58,11 @@ const UserInfo = () => {
 					</GithubLink>
 				</AdditionalProfileInfo>
 			</PersonalInfo>
-			<ReposInfo></ReposInfo>
+			<ReposInfo>
+				<LoadingWrapper>
+					<Loading color="#A5A5A5" />
+				</LoadingWrapper>
+			</ReposInfo>
 		</Wrapper>
 	);
 };

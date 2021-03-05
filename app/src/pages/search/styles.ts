@@ -6,10 +6,10 @@ export const Wrapper = styled.form`
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+	gap: 16px;
 `;
 
 export const ErrorMessage = styled.span`
-	margin-top: 16px;
 	font-size: 1.3rem;
 
 	@media (max-width: 1024px) {
