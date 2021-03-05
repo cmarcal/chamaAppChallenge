@@ -11,3 +11,9 @@ export type User = {
 	followers: number;
 	following: number;
 };
+
+export type Repo = {
+	name: string;
+	html_url: string;
+	description: string;
+};

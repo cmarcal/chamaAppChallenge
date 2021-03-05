@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { User } from "./types";
+import { Repo, User } from "./types";
 
 const baseURL = "https://api.github.com";
 
@@ -10,3 +10,7 @@ const httpGet = (route: string) => {
 
 export const getUser = (username: string): Promise<AxiosResponse<User>> =>
 	httpGet(`/users/${username}`);
+
+export const getUserRepos = (
+	username: string
+): Promise<AxiosResponse<Repo[]>> => httpGet(`/users/${username}/repos`);
