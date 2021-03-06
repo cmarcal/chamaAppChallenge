@@ -3,6 +3,7 @@ import { InputSearch, Loading } from "../../components";
 import { useGetUserInfo } from "../../hooks";
 import { ErrorMessage, Wrapper } from "./styles";
 import { useHistory } from "react-router-dom";
+import { saveToLocalStorage } from "../../helpers/helpers";
 
 export default function Search() {
 	const history = useHistory();
@@ -10,7 +11,10 @@ export default function Search() {
 	const { user, error, isLoading, getUser } = useGetUserInfo();
 
 	useEffect(() => {
-		if (user) history.push("/userInfo", user);
+		if (user) {
+			saveToLocalStorage(inputValue);
+			history.push("/userInfo", user);
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
 
@@ -18,7 +22,6 @@ export default function Search() {
 		e.preventDefault();
 		getUser(inputValue);
 	};
-	console.log(isLoading);
 
 	return (
 		<Wrapper onSubmit={handleSubmit}>

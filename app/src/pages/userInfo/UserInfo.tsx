@@ -74,8 +74,8 @@ const UserInfo = () => {
 				)}
 				{!isLoading && (
 					<WrapperRepoCards>
-						{repos.map((repo) => (
-							<RepoCard repo={repo}></RepoCard>
+						{repos.map((repo, i) => (
+							<RepoCard key={`repo${i}`} repo={repo}></RepoCard>
 						))}
 					</WrapperRepoCards>
 				)}
