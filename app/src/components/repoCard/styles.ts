@@ -13,6 +13,7 @@ export const Wrapper = styled.a`
 	}
 	text-overflow: ellipsis;
 	overflow: hidden;
+	border-radius: 4px;
 `;
 
 export const RepoName = styled.span`

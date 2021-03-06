@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
 html {
 	background-color: #4786ff;
 }
@@ -6,4 +8,5 @@ html,
 body,
 #root {
 	height: 100%;
+	font-family: "Open Sans", sans-serif;
 }
