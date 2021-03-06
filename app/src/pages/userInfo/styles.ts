@@ -47,12 +47,12 @@ export const PersonalInfo = styled.div`
 `;
 
 export const MainProfileInfo = styled.div`
+	text-align: center;
 	@media (max-width: 768px) {
 		width: 40%;
 	}
 	@media (max-width: 475px) {
 		width: 100%;
-		text-align: center;
 	}
 `;
 
