@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
 		grid-template-columns: 1fr;
 		grid-template-rows: 0.5fr 3.5fr 6fr;
 		grid-template-areas: "topbar" "personInfo" "reposInfo";
+		overflow: auto;
 	}
 `;
 
@@ -99,7 +100,23 @@ export const LoadingWrapper = styled.div`
 `;
 
 export const ReposInfo = styled.div`
-	display: flex;
 	grid-area: reposInfo;
-	border: 1px solid tomato;
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 768px) {
+		overflow: auto;
+	}
+`;
+
+export const ReposTitle = styled.h1`
+	align-self: center;
+`;
+
+export const WrapperRepoCards = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 0;
 `;

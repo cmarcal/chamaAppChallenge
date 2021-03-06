@@ -12,5 +12,5 @@ export const getUser = (username: string): Promise<AxiosResponse<User>> =>
 	httpGet(`/users/${username}`);
 
 export const getUserRepos = (
-	username: string
-): Promise<AxiosResponse<Repo[]>> => httpGet(`/users/${username}/repos`);
+	reposUrl: string
+): Promise<AxiosResponse<Repo[]>> => axios.get(reposUrl);

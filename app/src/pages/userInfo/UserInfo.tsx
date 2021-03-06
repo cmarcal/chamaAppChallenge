@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { User } from "../../services/types";
 import {
 	Wrapper,
@@ -17,16 +17,23 @@ import {
 	FollowInfo,
 	GithubLink,
 	LoadingWrapper,
+	ReposTitle,
+	WrapperRepoCards,
 } from "./styles";
 import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { GoLinkExternal } from "react-icons/go";
-import { Loading } from "../../components";
+import { Loading, RepoCard } from "../../components";
+import { useGetUserRepos } from "../../hooks/useGetUserRepos";
 const UserInfo = () => {
 	const { state: user } = useLocation<User>();
 	const history = useHistory();
-	console.log("User", user);
 
+	const { repos, isLoading, error, getRepos } = useGetUserRepos();
+
+	useEffect(() => {
+		getRepos(user.repos_url);
+	}, []);
 	return (
 		<Wrapper>
 			<Topbar>
@@ -59,9 +66,19 @@ const UserInfo = () => {
 				</AdditionalProfileInfo>
 			</PersonalInfo>
 			<ReposInfo>
-				<LoadingWrapper>
-					<Loading color="#A5A5A5" />
-				</LoadingWrapper>
+				<ReposTitle>Repositories</ReposTitle>
+				{isLoading && (
+					<LoadingWrapper>
+						<Loading color="#A5A5A5" />
+					</LoadingWrapper>
+				)}
+				{!isLoading && (
+					<WrapperRepoCards>
+						{repos.map((repo) => (
+							<RepoCard repo={repo}></RepoCard>
+						))}
+					</WrapperRepoCards>
+				)}
 			</ReposInfo>
 		</Wrapper>
 	);
