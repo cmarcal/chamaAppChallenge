@@ -1,9 +1,10 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { InputSearch, Loading } from "../../components";
 import { useGetUserInfo } from "../../hooks";
-import { ErrorMessage, Wrapper } from "./styles";
+import { ErrorMessage, SeeHistory, SeeHistoryIcon, Wrapper } from "./styles";
 import { useHistory } from "react-router-dom";
 import { saveToLocalStorage } from "../../helpers/helpers";
+import { VscHistory } from "react-icons/vsc";
 
 export default function Search() {
 	const history = useHistory();
@@ -25,6 +26,12 @@ export default function Search() {
 
 	return (
 		<Wrapper onSubmit={handleSubmit}>
+			<SeeHistory type="button">
+				SEE PREVIOUS SEARCHS
+				<SeeHistoryIcon>
+					<VscHistory />
+				</SeeHistoryIcon>
+			</SeeHistory>
 			<InputSearch
 				inputValue={inputValue}
 				handleChange={(e) => setInputValue(e.target.value)}
