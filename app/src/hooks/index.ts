@@ -1,1 +1,1 @@
-export {};
+export { useGetUserInfo } from "./useGetUserInfo";
