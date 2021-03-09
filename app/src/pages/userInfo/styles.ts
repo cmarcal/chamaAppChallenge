@@ -29,6 +29,7 @@ export const BackButton = styled.button`
 	border: none;
 	cursor: pointer;
 	font-size: 2rem;
+	background-color: transparent;
 `;
 
 export const PersonalInfo = styled.div`

@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import { HistoryCard } from "../../components";
 import { getHistoryFromLocalStorage } from "../../helpers/helpers";
 import { useGetUserInfo } from "../../hooks";
-import { Title, Wrapper } from "./styles";
+import { Title, Wrapper, BackButton } from "./styles";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 export default function SearchHistory() {
 	const history = useHistory();
@@ -29,6 +30,9 @@ export default function SearchHistory() {
 
 	return (
 		<Wrapper>
+			<BackButton onClick={() => history.goBack()}>
+				<IoArrowBackCircleOutline />
+			</BackButton>
 			<Title>PREVIOUSLY SEARCHED TERMS</Title>
 			{historyList.map((item) => (
 				<HistoryCard
