@@ -26,7 +26,7 @@ export default function Search() {
 
 	return (
 		<Wrapper onSubmit={handleSubmit}>
-			<SeeHistory type="button">
+			<SeeHistory type="button" onClick={() => history.push("search-history")}>
 				SEE PREVIOUS SEARCHS
 				<SeeHistoryIcon>
 					<VscHistory />
