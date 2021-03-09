@@ -4,16 +4,18 @@ import { FcSearch } from "react-icons/fc";
 
 export interface ComponentProps {
 	searchedTerm: string;
+	handleClick(): void;
 }
 
 export const HistoryCard = (props: ComponentProps) => {
-	const { searchedTerm } = props;
+	const { searchedTerm, handleClick } = props;
 	const [onHover, setOnHover] = useState(false);
 
 	return (
 		<Wrapper
 			onMouseEnter={() => setOnHover(true)}
 			onMouseLeave={() => setOnHover(false)}
+			onClick={handleClick}
 		>
 			{searchedTerm}
 			{onHover && <FcSearch />}
