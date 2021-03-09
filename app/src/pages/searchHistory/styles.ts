@@ -24,3 +24,14 @@ export const Title = styled.h1`
 		font-size: 1.4rem;
 	}
 `;
+
+export const LoadingWrapper = styled.div`
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	background-color: #000;
+	opacity: 0.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
