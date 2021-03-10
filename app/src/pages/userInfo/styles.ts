@@ -12,9 +12,8 @@ export const Wrapper = styled.div`
 		"personInfo reposInfo";
 
 	@media (max-width: 768px) {
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.5fr 3.5fr 6fr;
-		grid-template-areas: "topbar" "personInfo" "reposInfo";
+		display: flex;
+		flex-direction: column;
 		overflow: auto;
 	}
 `;
@@ -113,11 +112,13 @@ export const ReposTitle = styled.h1`
 	align-self: center;
 `;
 
-export const WrapperRepoCards = styled.div`
+export const WrapperRepoCards = styled.ul`
 	display: flex;
-	flex-wrap: wrap;
-	gap: 5px;
+	flex-direction: column;
+	width: 100%;
+	padding: 8px 16px;
+	gap: 8px;
 	justify-content: center;
 	align-items: center;
-	padding: 8px 0;
+	box-sizing: border-box;
 `;
