@@ -117,7 +117,7 @@ export const WrapperRepoCards = styled.ul`
 	flex-direction: column;
 	width: 100%;
 	padding: 8px 16px;
-	gap: 8px;
+	gap: 16px;
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;

@@ -15,6 +15,6 @@ export const Wrapper = styled.div`
 	}
 	&:hover {
 		cursor: pointer;
-		text-decoration: underline #4786ff;
+		text-decoration: underline #406ae0;
 	}
 `;
