@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { HistoryCard } from "../../components";
+import { HistoryCard, Loading } from "../../components";
 import { getHistoryFromLocalStorage } from "../../helpers/helpers";
 import { useGetUserInfo } from "../../hooks";
-import { Title, Wrapper } from "./styles";
+import { Title, Wrapper, BackButton, LoadingWrapper } from "./styles";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 export default function SearchHistory() {
 	const history = useHistory();
@@ -29,13 +30,23 @@ export default function SearchHistory() {
 
 	return (
 		<Wrapper>
+			<BackButton onClick={() => history.goBack()}>
+				<IoArrowBackCircleOutline />
+			</BackButton>
 			<Title>PREVIOUSLY SEARCHED TERMS</Title>
 			{historyList.map((item) => (
 				<HistoryCard
 					searchedTerm={item}
-					handleClick={() => handleClick(item)}
+					handleClick={() => {
+						!isLoading && handleClick(item);
+					}}
 				/>
 			))}
+			{isLoading && (
+				<LoadingWrapper>
+					<Loading color="#f1f1f1" />
+				</LoadingWrapper>
+			)}
 		</Wrapper>
 	);
 }

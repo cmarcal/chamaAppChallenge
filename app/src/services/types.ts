@@ -16,4 +16,7 @@ export type Repo = {
 	name: string;
 	html_url: string;
 	description: string;
+	stargazers_count: number;
+	language: string;
+	updated_at: string | Date;
 };
