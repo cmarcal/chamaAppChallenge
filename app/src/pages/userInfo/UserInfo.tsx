@@ -24,7 +24,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { GoLinkExternal } from "react-icons/go";
 import { Loading, RepoCard } from "../../components";
-import { useGetUserRepos } from "../../hooks/useGetUserRepos";
+import { useGetUserRepos } from "../../hooks";
 const UserInfo = () => {
 	const { state: user } = useLocation<User>();
 	const history = useHistory();
@@ -33,7 +33,9 @@ const UserInfo = () => {
 
 	useEffect(() => {
 		getRepos(user.repos_url);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	return (
 		<Wrapper>
 			<Topbar>

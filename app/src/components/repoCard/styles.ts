@@ -30,7 +30,7 @@ export const RepoName = styled.p`
 `;
 
 export const RepoDescription = styled.p`
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	margin: 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -41,14 +41,14 @@ export const RepoDescription = styled.p`
 export const RepoLanguage = styled.span`
 	position: absolute;
 	bottom: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 `;
 
 export const RepoStars = styled.div`
 	position: absolute;
 	right: 8px;
 	bottom: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	display: flex;
 	gap: 2px;
 
@@ -61,7 +61,7 @@ export const RepoLastUpdate = styled.div`
 	position: absolute;
 	right: 8px;
 	top: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	display: flex;
 	gap: 2px;
 	& svg {
