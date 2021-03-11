@@ -33,8 +33,12 @@ export default function Search() {
 	};
 
 	return (
-		<Wrapper onSubmit={handleSubmit}>
-			<SeeHistory type="button" onClick={() => history.push("search-history")}>
+		<Wrapper onSubmit={handleSubmit} data-testid="searchWrapper">
+			<SeeHistory
+				data-testid="searchHistoryButton"
+				type="button"
+				onClick={() => history.push("search-history")}
+			>
 				SEE PREVIOUS SEARCHS
 				<SeeHistoryIcon>
 					<VscHistory />

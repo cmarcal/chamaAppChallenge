@@ -36,7 +36,7 @@ it("should show placeholder props text", () => {
 	).toBeInTheDocument();
 });
 
-it("should call handler function when clicked", () => {
+it("should call handler function when changed", () => {
 	const mockChangeFunction = jest.fn();
 	props.handleChange = mockChangeFunction;
 	renderComponent();
