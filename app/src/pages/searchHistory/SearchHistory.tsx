@@ -29,13 +29,14 @@ export default function SearchHistory() {
 	};
 
 	return (
-		<Wrapper>
-			<BackButton onClick={() => history.goBack()}>
+		<Wrapper data-testid="searchHistoryWrapper">
+			<BackButton data-testid="backBtn" onClick={() => history.goBack()}>
 				<IoArrowBackCircleOutline />
 			</BackButton>
 			<Title>PREVIOUSLY SEARCHED TERMS</Title>
-			{historyList.map((item) => (
+			{historyList.map((item, i) => (
 				<HistoryCard
+					key={i}
 					searchedTerm={item}
 					handleClick={() => {
 						!isLoading && handleClick(item);
