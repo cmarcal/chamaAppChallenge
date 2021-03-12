@@ -19,6 +19,7 @@ import {
 	LoadingWrapper,
 	ReposTitle,
 	WrapperRepoCards,
+	EmptyRepoListMessage,
 } from "./styles";
 import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
@@ -29,7 +30,7 @@ const UserInfo = () => {
 	const { state: user } = useLocation<User>();
 	const history = useHistory();
 
-	const { repos, isLoading, error, getRepos } = useGetUserRepos();
+	const { repos, isLoading, getRepos } = useGetUserRepos();
 
 	useEffect(() => {
 		getRepos(user.repos_url);
@@ -79,11 +80,18 @@ const UserInfo = () => {
 					</LoadingWrapper>
 				)}
 				{!isLoading && (
-					<WrapperRepoCards>
-						{repos.map((repo, i) => (
-							<RepoCard key={`repo${i}`} repo={repo}></RepoCard>
-						))}
-					</WrapperRepoCards>
+					<>
+						<WrapperRepoCards>
+							{repos.map((repo, i) => (
+								<RepoCard key={`repo${i}`} repo={repo}></RepoCard>
+							))}
+						</WrapperRepoCards>
+						{repos.length === 0 && (
+							<EmptyRepoListMessage>
+								There are no public repos for this user yet
+							</EmptyRepoListMessage>
+						)}
+					</>
 				)}
 			</ReposInfo>
 		</Wrapper>

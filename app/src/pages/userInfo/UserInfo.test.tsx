@@ -27,8 +27,15 @@ const mockRepoList = (): any =>
 		],
 	});
 
+const mockEmptyRepoList = (): any =>
+	Promise.resolve({
+		data: [],
+	});
 const fetchRepos = () =>
 	jest.spyOn(api, "getUserRepos").mockImplementationOnce(mockRepoList);
+
+const fetchEmptyRepos = () =>
+	jest.spyOn(api, "getUserRepos").mockImplementationOnce(mockEmptyRepoList);
 
 const mockUser = {
 	login: "test",
@@ -98,4 +105,16 @@ it("should render repo cards correctly", async () => {
 
 	const cards = screen.getAllByTestId("repoCardWrapper");
 	expect(cards.length).toBe(2);
+});
+
+it("should render repo list empty message", async () => {
+	fetchEmptyRepos();
+
+	await act(async () => {
+		renderWithRouter();
+	});
+
+	expect(
+		screen.getByText("There are no public repos for this user yet")
+	).toBeInTheDocument();
 });

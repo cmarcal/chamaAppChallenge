@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.li`
 	width: 80%;
 	padding: 16px;
 	margin: 0 auto;

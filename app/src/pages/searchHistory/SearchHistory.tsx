@@ -11,7 +11,7 @@ export default function SearchHistory() {
 
 	const [historyList, setHistoryList] = useState<string[]>([]);
 
-	const { user, error, isLoading, getUser } = useGetUserInfo();
+	const { user, isLoading, getUser } = useGetUserInfo();
 
 	useEffect(() => {
 		setHistoryList(getHistoryFromLocalStorage());
