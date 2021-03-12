@@ -16,12 +16,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Icon = styled.div`
-	width: 96px;
-	height: 96px;
+	width: 72px;
+	height: 72px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 3rem;
+	font-size: 2rem;
 
 	@media (max-width: 1024px) {
 		width: 64px;
@@ -38,10 +38,10 @@ export const Icon = styled.div`
 
 export const Input = styled.input`
 	padding: 0 20px 0 0;
-	height: 96px;
+	height: 72px;
 	background: #fff;
 	color: #2c2c2c;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	border-radius: 2px;
 	-webkit-box-shadow: none;
 	box-shadow: none;

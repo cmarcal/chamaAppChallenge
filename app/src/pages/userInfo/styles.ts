@@ -122,3 +122,7 @@ export const WrapperRepoCards = styled.ul`
 	align-items: center;
 	box-sizing: border-box;
 `;
+
+export const EmptyRepoListMessage = styled.h4`
+	margin: 0 auto;
+`;

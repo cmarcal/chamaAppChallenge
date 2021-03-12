@@ -19,25 +19,28 @@ import {
 	LoadingWrapper,
 	ReposTitle,
 	WrapperRepoCards,
+	EmptyRepoListMessage,
 } from "./styles";
 import { useLocation, useHistory } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { GoLinkExternal } from "react-icons/go";
 import { Loading, RepoCard } from "../../components";
-import { useGetUserRepos } from "../../hooks/useGetUserRepos";
+import { useGetUserRepos } from "../../hooks";
 const UserInfo = () => {
 	const { state: user } = useLocation<User>();
 	const history = useHistory();
 
-	const { repos, isLoading, error, getRepos } = useGetUserRepos();
+	const { repos, isLoading, getRepos } = useGetUserRepos();
 
 	useEffect(() => {
 		getRepos(user.repos_url);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	return (
-		<Wrapper>
+		<Wrapper data-testid="userInfoWrapper">
 			<Topbar>
-				<BackButton onClick={() => history.goBack()}>
+				<BackButton data-testid="backBtn" onClick={() => history.goBack()}>
 					<IoArrowBackCircleOutline />
 				</BackButton>
 			</Topbar>
@@ -60,7 +63,11 @@ const UserInfo = () => {
 					<FollowInfo>
 						{user.followers} followers - {user.following} following
 					</FollowInfo>
-					<GithubLink href={user.html_url} target="_blank">
+					<GithubLink
+						data-testid="githubLink"
+						href={user.html_url}
+						target="_blank"
+					>
 						Send me to Github <GoLinkExternal />
 					</GithubLink>
 				</AdditionalProfileInfo>
@@ -73,11 +80,18 @@ const UserInfo = () => {
 					</LoadingWrapper>
 				)}
 				{!isLoading && (
-					<WrapperRepoCards>
-						{repos.map((repo, i) => (
-							<RepoCard key={`repo${i}`} repo={repo}></RepoCard>
-						))}
-					</WrapperRepoCards>
+					<>
+						<WrapperRepoCards>
+							{repos.map((repo, i) => (
+								<RepoCard key={`repo${i}`} repo={repo}></RepoCard>
+							))}
+						</WrapperRepoCards>
+						{repos.length === 0 && (
+							<EmptyRepoListMessage>
+								There are no public repos for this user yet
+							</EmptyRepoListMessage>
+						)}
+					</>
 				)}
 			</ReposInfo>
 		</Wrapper>

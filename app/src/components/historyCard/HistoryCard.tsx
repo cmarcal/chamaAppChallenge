@@ -13,12 +13,13 @@ export const HistoryCard = (props: ComponentProps) => {
 
 	return (
 		<Wrapper
+			data-testid="historyCardWrapper"
 			onMouseEnter={() => setOnHover(true)}
 			onMouseLeave={() => setOnHover(false)}
 			onClick={handleClick}
 		>
 			{searchedTerm}
-			{onHover && <FcSearch />}
+			{onHover && <FcSearch data-testid="searchIcon" />}
 		</Wrapper>
 	);
 };

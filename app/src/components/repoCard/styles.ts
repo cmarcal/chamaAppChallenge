@@ -18,7 +18,7 @@ export const Wrapper = styled.li`
 `;
 
 export const RepoName = styled.p`
-	width: 100%;
+	width: 70%;
 	margin: 0;
 	font-size: 1.2rem;
 	font-weight: 800;
@@ -30,25 +30,27 @@ export const RepoName = styled.p`
 `;
 
 export const RepoDescription = styled.p`
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	margin: 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	white-space: nowrap;
 	box-sizing: border-box;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
 `;
 
 export const RepoLanguage = styled.span`
 	position: absolute;
 	bottom: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 `;
 
 export const RepoStars = styled.div`
 	position: absolute;
 	right: 8px;
 	bottom: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	display: flex;
 	gap: 2px;
 
@@ -61,7 +63,7 @@ export const RepoLastUpdate = styled.div`
 	position: absolute;
 	right: 8px;
 	top: 4px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	display: flex;
 	gap: 2px;
 	& svg {

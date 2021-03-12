@@ -7,7 +7,6 @@ export type User = {
 	location: string;
 	email: string;
 	bio: string;
-	public_repos: string;
 	followers: number;
 	following: number;
 };

@@ -26,7 +26,7 @@ export const Title = styled.h1`
 `;
 
 export const LoadingWrapper = styled.div`
-	height: 100vh;
+	height: 100%;
 	width: 100vw;
 	position: absolute;
 	background-color: #000;

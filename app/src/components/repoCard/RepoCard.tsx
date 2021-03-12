@@ -26,6 +26,7 @@ export const RepoCard = (props: ComponentProps) => {
 	} = props.repo;
 	return (
 		<Wrapper
+			data-testid="repoCardWrapper"
 			onClick={() => window.open(html_url, "_blank")}
 			title="visit repository"
 		>
