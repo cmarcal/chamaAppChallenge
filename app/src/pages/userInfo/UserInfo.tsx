@@ -37,9 +37,9 @@ const UserInfo = () => {
 	}, []);
 
 	return (
-		<Wrapper>
+		<Wrapper data-testid="userInfoWrapper">
 			<Topbar>
-				<BackButton onClick={() => history.goBack()}>
+				<BackButton data-testid="backBtn" onClick={() => history.goBack()}>
 					<IoArrowBackCircleOutline />
 				</BackButton>
 			</Topbar>
@@ -62,7 +62,11 @@ const UserInfo = () => {
 					<FollowInfo>
 						{user.followers} followers - {user.following} following
 					</FollowInfo>
-					<GithubLink href={user.html_url} target="_blank">
+					<GithubLink
+						data-testid="githubLink"
+						href={user.html_url}
+						target="_blank"
+					>
 						Send me to Github <GoLinkExternal />
 					</GithubLink>
 				</AdditionalProfileInfo>
