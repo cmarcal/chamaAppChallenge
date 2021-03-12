@@ -15,7 +15,7 @@ export default function Search() {
 	useEffect(() => {
 		if (user) {
 			saveToLocalStorage(inputValue);
-			history.push("/userInfo", user);
+			history?.push("/userInfo", user);
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
